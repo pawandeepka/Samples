@@ -4,4 +4,7 @@
     <string name="dummy_text_name">Dummy Text Name</string>
     <string name="todo">TODO</string>
     <string name="welcome">WELCOME</string>
+
+    <string name="google_map_id">AIzaSyDQINmAvPM2WRDdF9sNKOuWkoYwT6muApI</string>
+
 </resources>

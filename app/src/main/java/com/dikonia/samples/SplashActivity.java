@@ -8,6 +8,8 @@ import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.TextView;
 
+import com.dikonia.samples.graphicuserinterface.ExplodeAnimActivity;
+import com.dikonia.samples.graphicuserinterface.GoogleMapAdActivity;
 import com.dikonia.samples.interfaceeg.InterfaceExampleActivity;
 
 public class SplashActivity extends AppCompatActivity {
@@ -38,7 +40,7 @@ public class SplashActivity extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(SplashActivity.this, InterfaceExampleActivity.class));
+                        startActivity(new Intent(SplashActivity.this, ExplodeAnimActivity.class));
                         finish();
                     }
                 },1500);

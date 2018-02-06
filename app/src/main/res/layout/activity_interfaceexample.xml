@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/parentView"
     android:layout_height="match_parent">
 
     <ImageView
@@ -11,7 +12,6 @@
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo"
-        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,8 @@
         android:layout_marginStart="16dp"
         android:text="@string/first_name"
         app:layout_constraintBaseline_toBaselineOf="@+id/editText"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="16dp" />
 
     <EditText
         android:id="@+id/editText"
@@ -39,7 +40,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="16dp" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -51,28 +54,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/btn_star_big_on" android:contentDescription="@string/todo" />
 
-    <NumberPicker
-        android:id="@+id/numberPicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" android:layout_marginStart="16dp" />
-
     <Button
         android:id="@+id/buttonClickMe"
         android:layout_width="165dp"
         android:layout_height="55dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/ripple_effect"
         android:clickable="true"
         android:onClick="funClickMe"
         android:text="click me"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberPicker" />
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <TextView
         android:id="@+id/textViewHEY"
@@ -82,12 +75,36 @@
         android:gravity="center"
         android:text="HEY"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonClickMe" />
 
+    <LinearLayout
+        android:id="@+id/transitions_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHEY">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DO MAGIC" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Transitions are awesome!"
+            android:visibility="gone" />
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
