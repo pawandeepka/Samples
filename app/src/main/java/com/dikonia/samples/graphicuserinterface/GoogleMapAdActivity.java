@@ -1,7 +1,6 @@
 package com.dikonia.samples.graphicuserinterface;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -16,6 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.dikonia.samples.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -26,12 +29,9 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
 @SuppressWarnings("ALL")
@@ -52,12 +52,11 @@ public class GoogleMapAdActivity extends AppCompatActivity implements OnMapReady
 
     double latitude = 0, longitude = 0;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_googlemap_ad);
+
 
         initView();
     }
@@ -72,6 +71,18 @@ public class GoogleMapAdActivity extends AppCompatActivity implements OnMapReady
             createLocationRequest();
 
             checkLocationPermission();
+        }
+
+        AdView adView = findViewById(R.id.adView);
+
+        if (adView != null) {
+            MobileAds.initialize(this, "ca-app-pub-1208999349908240~4441120111");
+
+            AdRequest adRequest = new AdRequest.Builder().build();
+
+            //adView.setAdSize(AdSize.BANNER);
+
+            adView.loadAd(adRequest);
         }
     }
 

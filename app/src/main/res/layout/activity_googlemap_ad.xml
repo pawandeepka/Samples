@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.dikonia.samples.graphicuserinterface.GoogleMapAdActivity">
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="0dp"
         android:layout_height="62dp"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-4588017850804151/1315083386"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-1208999349908240/4646856447"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -20,21 +19,20 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <fragment
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        xmlns:map="http://schemas.android.com/apk/res-auto"
+    <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mapView"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        map:uiZoomGestures="true"
         android:hardwareAccelerated="true"
         app:layout_constraintBottom_toTopOf="@+id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        map:uiZoomGestures="true" />
 
 </android.support.constraint.ConstraintLayout>

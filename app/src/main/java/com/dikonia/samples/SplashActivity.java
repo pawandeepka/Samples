@@ -40,7 +40,7 @@ public class SplashActivity extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        startActivity(new Intent(SplashActivity.this, ExplodeAnimActivity.class));
+                        startActivity(new Intent(SplashActivity.this, GoogleMapAdActivity.class));
                         finish();
                     }
                 },1500);
